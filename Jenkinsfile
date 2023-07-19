@@ -21,13 +21,15 @@ pipeline {
         }
 
         stage('git clone source 2') {
-            checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: 'main']],
-                    extensions: [],
-                    submoduleCfg: [],
-                    userRemoteConfigs: [[url: 'https://github.com/lenguyenkhoi21/example-aws-front-end.git']]
-            ])
+            steps {
+                checkout([
+                        $class: 'GitSCM',
+                        branches: [[name: 'main']],
+                        extensions: [],
+                        submoduleCfg: [],
+                        userRemoteConfigs: [[url: 'https://github.com/lenguyenkhoi21/example-aws-front-end.git']]
+                ])
+            }
         }
 
         stage('build source 2') {
