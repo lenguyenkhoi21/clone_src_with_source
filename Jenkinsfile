@@ -15,7 +15,6 @@ pipeline {
 
         stage('build source 1') {
             steps {
-                sh('cd jenkins_resouce_for_labs')
                 sh('yarn install')
             }
         }
@@ -34,7 +33,6 @@ pipeline {
 
         stage('build source 2') {
             steps {
-                sh('cd example-aws-front-end')
                 sh('yarn install')
             }
         }
